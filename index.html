@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Doğum Günü Kutlaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="inputSection" class="input-section">
+        <h1>🎂🎈</h1>
+        <h2>🎉 Kutla!</h2>
+        <input type="text" id="nameInput" placeholder="İsim girin..." autocomplete="off">
+        <button onclick="celebrate()">Kutla! 🎊</button>
+    </div>
+
+    <div id="celebration" class="celebration">
+        <h1 id="celebrationText"></h1>
+        
+        <div class="message-container">
+            <p class="message">🎂</p>
+            <p class="message">💖 senelerr dostluğumuza daha çok tad kattı</p>
+            <p class="message">✨ ve ben bu tadı çok seviyorum</p>
+            <p class="message">🎈 aynı gün doğsak bu kadarr severdim</p>
+            <p class="message">🌟 nicee senelerimizee</p>
+            <p class="message">🎉 çoook seviyorumm</p>
+            <p class="message"> iyi ki sen varsın &lt;3</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-photo active" style="background-image: url('photos/photo1.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo2.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo3.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo4.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo5.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo7.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo8.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo10.jpg');"></div>
+            <div class="gallery-photo" style="background-image: url('photos/photo6.jpg');"></div>
+        </div>
+
+        <div class="captions">
+            <p class="photo-caption active">en sevdiğimm fotoğrfımızla başlamak istedimm</p>
+            <p class="photo-caption">sen bi kitaptaki en güzel satır en güzel kelimesin ZEHRA</p>
+            <p class="photo-caption">sizinle içtiiğim sıradan bi kahve bilee evrenin en lezzetli kkahvesi oluyor</p>
+            <p class="photo-caption">en sıradan gün bile özel oluyor</p>
+            <p class="photo-caption">ben uyurum sen büyürsün...</p>
+            <p class="photo-caption">ennnn güzel günümüzzzz</p>
+            <p class="photo-caption">nereden nereye</p>
+            <p class="photo-caption">birçokk senedir hayatımdasın hep de olacaksınn iyii ki doğdunn</p>
+            <p class="photo-caption">yolllarına hep çiçekler açsın kelebekler konsun</p>
+        </div>
+
+        <div class="wish-section">
+            <p>bir dilek tutun</p>
+            <p>...</p>
+            <p>...</p>
+            <p class="highlight">zehra doğmus</p>
+            <p class="highlight">iyi ki doğmuşş</p>
+        </div>
+
+        <button onclick="reset()" class="reset-btn">🔄 Yeni Kutlama</button>
+    </div>
+
+    <div id="emojiRain"></div>
+    
+    <audio id="musicPlayer" loop>
+        <source src="birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

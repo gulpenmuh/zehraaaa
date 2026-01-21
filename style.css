@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-section {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in;
+}
+
+.input-section h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.input-section h2 {
+    font-size: 40px;
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.input-section input {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 3px solid #667eea;
+    border-radius: 50px;
+    outline: none;
+    width: 300px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.input-section input:focus {
+    border-color: #764ba2;
+    transform: scale(1.05);
+}
+
+.input-section button {
+    padding: 15px 40px;
+    font-size: 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.input-section button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.celebration {
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+
+.celebration.active {
+    display: block;
+    animation: slideIn 1s ease-out;
+}
+
+.celebration h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+}
+
+.message-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    font-size: 24px;
+    margin: 15px 0;
+    animation: fadeInUp 1s ease-out backwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message:nth-child(1) { animation-delay: 0.2s; }
+.message:nth-child(2) { animation-delay: 0.4s; }
+.message:nth-child(3) { animation-delay: 0.6s; }
+.message:nth-child(4) { animation-delay: 0.8s; }
+.message:nth-child(5) { animation-delay: 1s; }
+.message:nth-child(6) { animation-delay: 1.2s; }
+.message:nth-child(7) { animation-delay: 1.4s; }
+.message:nth-child(8) { animation-delay: 1.6s; }
+
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 30px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.gallery-photo.active {
+    opacity: 1;
+}
+
+.captions {
+    margin: 20px 0;
+}
+
+.photo-caption {
+    font-size: 22px;
+    font-style: italic;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    height: 0;
+    overflow: hidden;
+}
+
+.photo-caption.active {
+    opacity: 1;
+    height: auto;
+}
+
+.wish-section {
+    margin: 40px 0;
+    font-size: 26px;
+    animation: pulse 2s infinite;
+}
+
+.wish-section p {
+    margin: 10px 0;
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: 32px;
+    color: #ffd700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.reset-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 30px;
+}
+
+.reset-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+#emojiRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 40px;
+    animation: fall linear infinite;
+    opacity: 0;
+}
+
+.balloon {
+    position: fixed;
+    font-size: 60px;
+    cursor: pointer;
+    animation: float 6s ease-in-out infinite;
+    z-index: 999;
+    transition: all 0.3s;
+}
+
+.balloon:hover {
+    transform: scale(1.2);
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confettiFall linear forwards;
+    z-index: 998;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0.5;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-40px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes confettiFall {
+    to {
+        top: 100vh;
+        transform: rotateZ(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .input-section {
+        padding: 30px;
+    }
+    
+    .input-section h1 {
+        font-size: 60px;
+    }
+    
+    .input-section h2 {
+        font-size: 30px;
+    }
+    
+    .celebration h1 {
+        font-size: 40px;
+    }
+    
+    .message {
+        font-size: 18px;
+    }
+    
+    .gallery {
+        height: 350px;
+    }
+}
